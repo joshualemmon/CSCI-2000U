@@ -1,4 +1,4 @@
-'''Count the number of observations in each group. Each observation
+﻿'''Count the number of observations in each group. Each observation
 is on a separate line, and groups are separated by blank line.'''
 
 def count_observations(lines):
@@ -22,3 +22,6 @@ assert count_observations(data) == [2], 'two lines failed'
 
 data = ['two\n', '\n', 'records\n']
 assert count_observations(data) == [1, 1], 'two records failed'
+
+reader = open('observations.txt', 'r')
+print(count_observations(reader))
