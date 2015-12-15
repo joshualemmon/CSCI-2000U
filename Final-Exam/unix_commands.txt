@@ -4,6 +4,8 @@
 # except the two header lines?
 # Enter the relevant Unix command(s) used below.
 
+tail -n +3 classlist.csv
+
 
 
 
@@ -13,6 +15,8 @@
 # Enter the relevant Unix command(s) used below as well as the number
 # of students in the list.
 
+tail -n +3 classlist.csv | wc -l 
+130
 
 
 
@@ -24,7 +28,10 @@
 # Enter the relevant Unix command(s) used below as well as the names
 # of the first and last students in the new list.
 
+tail -n +3 classlist.csv | cut -c 11- | sort
 
+Adam Holte
+Zenia Mowrer
 
 
 # part (d)
@@ -33,6 +40,8 @@
 # repeated in the class list?
 # Enter the relevant name(s) and the Unix command(s) below.
 
+#cut -d isnt delimiting at the comma
+tail -n +3 classlist.csv | cut -c 11- | cut -d "," | uniq -d
 
 
 
@@ -41,3 +50,5 @@
 # the student number and the first character of the first name to make
 # a four-character identifier for each student.
 # Enter the relevant Unix command(s) used below.
+
+tail -n +3 classlist.csv | cut -c 7-11 | cut -c 4 --complement
